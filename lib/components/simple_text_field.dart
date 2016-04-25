@@ -89,13 +89,17 @@ class SimpleTextField extends Component implements XEditable {
 
   @override
   view() {
+
+    bool isEmpty = (state["value"] == "");
+    String classes = "editable editable-click " + (isEmpty ? "editable-empty" : "");
+
     return a({"href": "#", "onClick": toEdit, "id": "username",
       "data-type": "text",
       "data-pk": "1",
       "data-title": "Enter username",
-      "className": "editable editable-click",
+      "className": classes,
       "style": {"display": "inline"}},
-        (state["value"] == "") ? "Empty" : state["value"]
+        (isEmpty) ? "Empty" : state["value"]
     );
   }
 }
