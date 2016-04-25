@@ -1,0 +1,11 @@
+name: x_editable_react_dart
+version: 0.0.1
+author: Nikita Babanin <nikitared@iwtlab.net>
+description: x-editable components wrapped react framework
+environment:
+  sdk: '>=1.15.0'
+dependencies:
+  react: "0.9.0"
+dev_dependencies:
+  test: any
+  http_server: "^0.9.5+1"
