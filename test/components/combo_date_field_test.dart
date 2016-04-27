@@ -18,6 +18,8 @@ main() {
     var component = reactTestUtils.renderIntoDocument(simpleTextField({}));
     reactTestUtils.Simulate.change(component, {"target": {"value" : "dsfsdf"}});
 
-    print("component type: " + component.runtimeType.toString());
+    print("component type: " + component.runtimeType);
+
+
   });
 }

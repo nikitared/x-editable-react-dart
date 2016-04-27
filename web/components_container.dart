@@ -1,7 +1,11 @@
 import "package:react/react.dart";
 import 'package:x_editable_react_dart/components/simple_text_field.dart';
+import 'package:x_editable_react_dart/components/textarea_field.dart';
+import 'package:x_editable_react_dart/components/combo_date_field.dart';
 
 var simpleTextField = registerComponent(() => new SimpleTextField());
+var textareaField = registerComponent(() => new TextareaField());
+var comboDateField = registerComponent(() => new ComboDateField());
 
 class ComponentsContainer extends Component {
 
@@ -57,10 +61,7 @@ class ComponentsContainer extends Component {
                   ),
                   tr({},
                       td({}, "Combodate (date)"),
-                      td({},
-                          a({"href": "#", "id": "dob", "data-type": "combodate", "data-value": "1984-05-15", "data-format": "YYYY-MM-DD", "data-viewformat": "DD/MM/YYYY", "data-template": "D / MMM / YYYY", "data-pk": "1", "data-title": "Select Date of birth", "className": "editable editable-click"},
-                              "15/05/1984"
-                          )
+                      td({}, comboDateField({})
                       )
                   ),
                   tr({},
@@ -72,14 +73,8 @@ class ComponentsContainer extends Component {
                       )
                   ),
                   tr({},
-                      td({}, "Textarea, buttons below. Submit by",
-                          i({}, "ctrl+enter" )
-                      ),
-                      td({},
-                          a({"href": "#", "id": "comments", "data-type": "textarea", "data-pk": "1", "data-placeholder": "Your comments here...", "data-title": "Enter comments", "className": "editable editable-pre-wrapped editable-click"},
-                              "awesome", "user!"
-                          )
-                      )
+                      td({}, "Textarea, buttons below. Submit by", i({}, "ctrl+enter" )),
+                      td({}, textareaField({}) )
                   ),
                   tr({},
                       td({}, "Twitter typeahead.js" ),
